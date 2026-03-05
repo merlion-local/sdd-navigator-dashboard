@@ -1,1 +1,15 @@
-{}
+{
+  "components/DashboardClient.tsx -> @/components/RequirementsTable": {
+    "id": 4670,
+    "files": [
+      "static/chunks/176-b06c1d1e6e69b017.js",
+      "static/chunks/670.4eb979d4b4343af1.js"
+    ]
+  },
+  "components/DashboardClient.tsx -> @/components/TasksPanel": {
+    "id": 7618,
+    "files": [
+      "static/chunks/618.a8b45a07f7762c31.js"
+    ]
+  }
+}

@@ -1,40 +1,32 @@
-import Link from "next/link";
+import { Suspense } from "react";
 import RequirementDetail from "@/components/RequirementDetail";
-import { getRequirement, listRequirements } from "@/lib/api";
+import BackToDashboardLink from "@/components/BackToDashboardLink";
+import { getRequirement } from "@/lib/api";
+import requirements from "@/data/requirements.json";
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const res = await listRequirements();
-
-  if (!res.ok) return [];
-
-  return res.data.map((r) => ({
-    id: r.id
-  }));
+  return requirements.map((r) => ({ id: r.id }));
 }
 
 export default async function RequirementPage({
-  params,
-  searchParams
+  params
 }: {
   params: Promise<{ id: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { id } = await params;
-  const sp = await searchParams;
 
   // @req SCD-UI-005
   const res = await getRequirement(id);
 
-  const backQuery = new URLSearchParams();
-  for (const [k, v] of Object.entries(sp)) {
-    if (typeof v === "string") backQuery.set(k, v);
-    else if (Array.isArray(v)) v.forEach((x) => backQuery.append(k, x));
-  }
-
   return (
     <main>
       <p className="small">
-        <Link href={`/?${backQuery.toString()}`}>← Back to dashboard</Link>
+        <Suspense fallback={<span>← Back to dashboard</span>}>
+          <BackToDashboardLink />
+        </Suspense>
       </p>
 
       <RequirementDetail detailRes={res} />
