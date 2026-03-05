@@ -1,0 +1,74 @@
+[
+  {
+    "id": "FR-SCAN-001",
+    "type": "FR",
+    "title": "Scan repository",
+    "description": "Service scans a codebase and detects requirement traceability markers.",
+    "status": "covered",
+    "createdAt": "2026-02-20T10:00:00Z",
+    "updatedAt": "2026-03-01T12:10:00Z"
+  },
+  {
+    "id": "FR-SCAN-002",
+    "type": "FR",
+    "title": "Compute traceability metrics",
+    "description": "Service computes coverage metrics from requirements, annotations, and tasks.",
+    "status": "covered",
+    "createdAt": "2026-02-20T10:05:00Z",
+    "updatedAt": "2026-03-01T12:12:00Z"
+  },
+  {
+    "id": "FR-REQ-001",
+    "type": "FR",
+    "title": "List requirements",
+    "description": "API provides list of requirements with type/status and timestamps.",
+    "status": "covered",
+    "createdAt": "2026-02-21T09:00:00Z",
+    "updatedAt": "2026-03-01T12:20:00Z"
+  },
+  {
+    "id": "FR-REQ-002",
+    "type": "FR",
+    "title": "Requirement detail",
+    "description": "API returns a requirement with linked annotations and tasks.",
+    "status": "partial",
+    "createdAt": "2026-02-21T09:15:00Z",
+    "updatedAt": "2026-03-01T12:30:00Z"
+  },
+  {
+    "id": "FR-API-001",
+    "type": "FR",
+    "title": "Stats endpoint",
+    "description": "API returns overall stats including coverage and lastScanAt.",
+    "status": "covered",
+    "createdAt": "2026-02-22T08:00:00Z",
+    "updatedAt": "2026-03-01T12:35:00Z"
+  },
+  {
+    "id": "FR-API-003",
+    "type": "FR",
+    "title": "Trigger scan",
+    "description": "API can trigger a scan and report scan status.",
+    "status": "missing",
+    "createdAt": "2026-02-22T08:20:00Z",
+    "updatedAt": "2026-03-01T12:40:00Z"
+  },
+  {
+    "id": "AR-PERF-001",
+    "type": "AR",
+    "title": "Performance budget",
+    "description": "Dashboard should remain responsive for large lists (virtualization optional).",
+    "status": "covered",
+    "createdAt": "2026-02-23T11:00:00Z",
+    "updatedAt": "2026-03-01T12:50:00Z"
+  },
+  {
+    "id": "AR-SEC-001",
+    "type": "AR",
+    "title": "No secrets in client bundle",
+    "description": "Dashboard must not embed secrets; uses NEXT_PUBLIC_API_URL only.",
+    "status": "missing",
+    "createdAt": "2026-02-23T11:10:00Z",
+    "updatedAt": "2026-03-01T13:00:00Z"
+  }
+]

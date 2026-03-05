@@ -1,0 +1,38 @@
+{
+  "name": "sdd-navigator-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "check:coverage": "node ./scripts/check-coverage.js",
+    "mock:api": "prism mock openapi/sdd-coverage-api.yaml -h 0.0.0.0 -p 4010"
+  },
+  "dependencies": {
+    "next": "^15.5.10",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "yaml": "2.4.5",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.4",
+    "@stoplight/prism-cli": "^5.14.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.19.13",
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.22",
+    "eslint": "^9",
+    "eslint-config-next": "^15.5.10",
+    "jsdom": "^28.1.0",
+    "typescript": "5.4.5",
+    "vitest": "^4.0.18"
+  }
+}

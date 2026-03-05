@@ -1,0 +1,40 @@
+requirements:
+  - id: SCD-UI-001
+    title: Load project stats
+    description: Dashboard MUST fetch summary stats from GET /stats on initial load and display totals, coverage, orphan counts, and lastScanAt.
+
+  - id: SCD-UI-002
+    title: Requirements table
+    description: Dashboard MUST display a requirements list with columns id, type, title, status, updatedAt using data from GET /requirements.
+
+  - id: SCD-UI-003
+    title: Filter requirements with URL sync
+    description: User MUST be able to filter requirements by type (FR, AR) and status (covered, partial, missing) and the filters MUST be reflected in the URL query params.
+
+  - id: SCD-UI-004
+    title: Sort requirements
+    description: User MUST be able to sort the requirements by id or updatedAt with ascending/descending order, and aria-sort MUST reflect the current sort.
+
+  - id: SCD-UI-005
+    title: Requirement detail view
+    description: Dashboard MUST show a requirement detail view using GET /requirements/{id}, including linked annotations and tasks and a coverage assessment label.
+
+  - id: SCD-UI-006
+    title: Tasks panel
+    description: Dashboard MUST show a tasks panel listing all tasks and allow filtering by task status; orphan tasks MUST be highlighted.
+
+  - id: SCD-UI-007
+    title: Orphans panel
+    description: Dashboard MUST provide a collapsible panel listing orphan annotations and orphan tasks in one place.
+
+  - id: SCD-UI-008
+    title: Error and loading states
+    description: UI MUST render a loading indicator while data is loading and a non-crashing error state for expected failures (network, 404, malformed data).
+
+  - id: SCD-UI-009
+    title: Theme toggle
+    description: UI MUST support light/dark theme toggle, persist choice in localStorage, and respect prefers-color-scheme on first visit.
+
+  - id: SCD-UI-010
+    title: Deterministic self-validation
+    description: Repository MUST include a script that scans source for @req annotations and exits with code 1 if any requirement IDs are missing.
