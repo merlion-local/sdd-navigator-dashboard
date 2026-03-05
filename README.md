@@ -1,4 +1,12 @@
 # SDD Navigator Dashboard
+## Static Export Strategy
+
+GitHub Pages supports only static hosting.  
+Dynamic routes (/requirements/[id]) therefore require pre-generated paths.
+
+generateStaticParams() uses local requirements.json to enumerate ids at build time.
+
+Actual page data is still fetched via the API client at runtime and validated with Zod schemas.
 
 Frontend dashboard for exploring a project's **Specification-Driven Development (SDD)** artifacts.
 
