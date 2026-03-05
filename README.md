@@ -26,8 +26,10 @@ The project demonstrates a **contract-driven frontend architecture** using:
 - type-safe data flow
 
 ---
+<img width="663" height="729" alt="Снимок экрана 2026-03-06 в 00 20 43" src="https://github.com/user-attachments/assets/881b73b8-1b5b-4741-9837-43b1b63967db" />
 
 # Overview
+
 
 Specification-Driven Development links:
 
