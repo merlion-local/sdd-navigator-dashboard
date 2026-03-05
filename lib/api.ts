@@ -26,9 +26,23 @@ import {
 
 type Schema<T> = z.ZodType<T, z.ZodTypeDef, unknown>;
 
+/**
+ * ✅ ВАЖНО:
+ * - Для GitHub Pages (static export) API-mode должен быть выключен, чтобы не было fetch на build/runtime.
+ * - API-mode включается ТОЛЬКО если явно выставлен NEXT_PUBLIC_API_MODE=true
+ *   и задан NEXT_PUBLIC_API_URL.
+ *
+ * Локально (Prism):
+ *   NEXT_PUBLIC_API_MODE=true
+ *   NEXT_PUBLIC_API_URL=http://localhost:4010
+ *
+ * GitHub Pages:
+ *   (ничего не задаём) -> читаем данные из /data/*.json
+ */
 const isApiMode = (): boolean => {
+  const enabled = process.env.NEXT_PUBLIC_API_MODE === "true";
   const url = process.env.NEXT_PUBLIC_API_URL;
-  return typeof url === "string" && url.trim().length > 0;
+  return enabled && typeof url === "string" && url.trim().length > 0;
 };
 
 const apiBaseUrl = (): string => (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/$/, "");
