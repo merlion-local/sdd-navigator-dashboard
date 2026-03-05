@@ -1,8 +1,9 @@
 import { Suspense } from "react";
 import RequirementDetail from "@/components/RequirementDetail";
-import BackToDashboardLink from "@/components/BackToDashboardLink";
+
 import { getRequirement } from "@/lib/api";
 import requirements from "@/data/requirements.json";
+import BackToDashboardLink from "@/components/BackToDashboardLink";
 
 export const dynamicParams = false;
 
